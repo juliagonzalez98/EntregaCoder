@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from tercera_entrega.views import saludo,ingresa_datos, probando_template
+from appjulia.views import ingresa_usuario
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",saludo),
     path('ingreso', ingresa_datos),
     path('probando_template', probando_template),
+    path('ingresos/',ingresa_usuario),
 ]
