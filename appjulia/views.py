@@ -14,3 +14,6 @@ def ingresa_usuario(request):
     nuevo_usuario.save()
     texto = f"Hola {nuevo_usuario.nombre} {nuevo_usuario.apellido}"
     return HttpResponse(texto)
+
+def index(request):
+    return render(request, 'appjulia/index.html')
