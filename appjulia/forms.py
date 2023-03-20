@@ -1,4 +1,5 @@
 from django import forms 
 
-class BuscarActividad(forms.Form):
-    actividad = forms.CharField(max_length=35)
+class BuscarTurnoActividadForm (forms.Form):
+    turno = forms.CharField(max_length=10)
+

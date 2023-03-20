@@ -28,11 +28,14 @@ def FormularioUsuario(request):
 
     return render(request, "appjulia/FormularioUsuario.html")
 
-def BuscaActividad (request):
+def EligeActividad (request):
     if request.method == "POST":
         print("\n\n {request.POST} \n\n")
         actividad_elegida = request.POST["actividad"]
         actividad_elegida = Actividad(actividad_elegida = actividad) 
         actividad_elegida.save()
 
-    return render(request, 'appjulia/BuscaActividad.html')
+    return render(request, 'appjulia/EligeActividad.html')
+
+
+
