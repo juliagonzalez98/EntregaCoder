@@ -9,3 +9,4 @@ admin.site.register(Usuario)
 admin.site.register(Actividad)
 
 admin.site.register(Reserva)
+
