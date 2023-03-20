@@ -13,3 +13,14 @@ def reserva(request):
 
 def usuario(request):
     return render(request, 'appjulia/usuario.html')
+
+def FormularioUsuario(request):
+
+    if request.method == "POST":
+        print ("\n\n{request.POST}\n\n")
+        nombre = request.POST["nombre"]
+        apellido = request.POST["apellido"]
+        usuario = Usuario(nombre = nombre, apellido = apellido)
+        usuario.save()
+
+    return render(request, "appjulia/FormularioUsuario.html")
