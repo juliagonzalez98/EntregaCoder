@@ -9,4 +9,6 @@ urlpatterns = [
     path('actividad', actividad, name= "actividad"),
     path('EligeActividad', EligeActividad, name="EligeActividad"),
     path('BuscaTurno', BuscaTurno, name="BuscaTurno"),
+    path('FormUsuario', guardar_usuario, name="guardar_usuario"),
+    path ('BuscaUsuario', BuscaUsuario, name="BuscaUsuario"),
 ]

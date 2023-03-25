@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from appjulia.models import *
+from appjulia.forms import *
 
 
 # Create your views here.
@@ -28,6 +29,23 @@ def FormularioUsuario(request):
 
     return render(request, "appjulia/FormularioUsuario.html")
 
+def guardar_usuario(request):
+         if request.method == "POST":
+ 
+            usuario = GuardaUsuarioForm(request.POST) 
+            print(usuario)
+ 
+            if usuario.is_valid:
+                  informacion = usuario.cleaned_data
+                  usuario = Usuario(nombre=informacion["nombre"], camada=informacion["apellido"])
+                  usuario.save()
+                  return render(request, "AppCoder/inicio.html")
+         else:
+            usuario = GuardaUsuarioForm()
+ 
+         return render(request, "appjulia/FormUsuariohtml", {"usuario": usuario})
+
+
 def EligeActividad (request):
     if request.method == "POST":
         print("\n\n {request.POST} \n\n")
@@ -44,4 +62,19 @@ def BuscaTurno (request):
         turno = Reserva(turno = turno) 
         turno.save()
     return render (request, 'appjulia/BuscaTurno.html') 
+
+def BuscaUsuario(request):
+        if request.method == "POST":
+            usuario = BuscarUsuarioForm(request.POST) 
+            print(usuario)
+
+            if usuario.is_valid:
+                  informacion = usuario.cleaned_data
+                  usuarios = Usuario.objects.filter(nombre = informacion["nombre"])
+                  return render(request, "appjuliaj/BuscaUsuario.html", {"data":[usuarios]})
+             
+        else:
+              usuario = GuardaUsuarioForm()
+
+        return render(request, 'appjulia/BuscaUsuario.html', {"usuario": usuario})
 
