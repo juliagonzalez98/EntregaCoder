@@ -8,4 +8,5 @@ urlpatterns = [
     path('formulariousuario', FormularioUsuario, name= "FormularioUsuario"),
     path('actividad', actividad, name= "actividad"),
     path('EligeActividad', EligeActividad, name="EligeActividad"),
+    path('BuscaTurno', BuscaTurno, name="BuscaTurno"),
 ]

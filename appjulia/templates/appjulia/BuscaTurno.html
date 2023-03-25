@@ -14,7 +14,7 @@
             <div class="col-xl-6">
                 <div class="text-center text-white">
                     <!-- Page heading-->
-                    <h1 class="mb-5">Ingrese la acitvidad elegida</h1>
+                    <h1 class="mb-5">Ingrese el turno elegido</h1>
                     <!-- Signup form-->
                     <!-- * * * * * * * * * * * * * * *-->
                     <!-- * * SB Forms Contact Form * *-->
@@ -56,7 +56,7 @@
     </div>
 </header>
 
-<form action= "appjulia/BuscaTurno" method="GET">
+<form action= "" method="post">
     {% csrf_token %}
     <p> TURNO <input type = "text" name="turno">
     <input type = "submit" value="Enviar">

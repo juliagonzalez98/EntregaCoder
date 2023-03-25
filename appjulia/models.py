@@ -9,7 +9,7 @@ class Usuario(models.Model):
         return f"{self.nombre} {self.apellido}"
    
 class Actividad(models.Model):
-    actividad_elegida = models.CharField(max_length=35)
+    actividad= models.CharField(max_length=35)
 
     def __str__(self):
         return f"{self.actividad}"
@@ -17,6 +17,8 @@ class Actividad(models.Model):
 class Reserva(models.Model):
      turno = models.CharField(max_length=5)
 
+     def __str__(self):
+        return f"{self.turno}"
 
 
 

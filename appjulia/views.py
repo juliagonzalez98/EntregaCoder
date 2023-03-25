@@ -31,11 +31,17 @@ def FormularioUsuario(request):
 def EligeActividad (request):
     if request.method == "POST":
         print("\n\n {request.POST} \n\n")
-        actividad_elegida = request.POST["actividad"]
-        actividad_elegida = Actividad(actividad_elegida = actividad) 
-        actividad_elegida.save()
+        actividad= request.POST["actividad"]
+        actividad = Actividad(actividad = actividad) 
+        actividad.save()
 
     return render(request, 'appjulia/EligeActividad.html')
 
-
+def BuscaTurno (request):
+    if request.method == "POST":
+        print("\n\n {request.POST} \n\n")
+        turno = request.POST["turno"]
+        turno = Reserva(turno = turno) 
+        turno.save()
+    return render (request, 'appjulia/BuscaTurno.html') 
 
